@@ -8,25 +8,26 @@ body {
   background: radial-gradient(#222, #000);
   overflow: hidden;
 }
-/*
-canvas {
-  background: #000;
-  bottom: 0;
-  box-shadow:
-    0 0 0 10px #222,
-    0 30px 30px -20px #000
-  ;
-  height: 400px;
-  left: 0;
-  margin: auto;
-  max-height: 100%;
-  max-width: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 600px;
-}*/
+/* Intro CSS */
+.introbg {
+  background-image: url(img/Intro.jpg);
+  background-position: center center;
+  background-size: cover;
+}
 
+.start {
+  background: #2199ff;
+  color: white;
+  border: white 2px solid;
+  border-radius: 20px;
+}
+
+.startwrap {
+  text-align: center;
+  padding-top: 35%;
+}
+
+/* Main game CSS */
 .scene {
   background: url(img/Farm.png) #1E90FF;
   background-size: contain;
@@ -65,34 +66,34 @@ position: absolute;
 }
 
 .blacksheep {
-	z-index: 55;
-	left: 20%;
-	top: 40%;
+  z-index: 55;
+  left: 20%;
+  top: 40%;
 }
 .dog {
-	z-index: 45;
-	left: 45%;
-	top: 50%;
+  z-index: 45;
+  left: 45%;
+  top: 50%;
 }
 .farmer {
-	z-index: 50;
-	left: 45%;
-	top: 35%;
+  z-index: 50;
+  left: 45%;
+  top: 35%;
 }
 .hay {
-	z-index: 40;
-	left: 20%;
-	top: 23%;
+  z-index: 40;
+  left: 20%;
+  top: 23%;
 }
 .milk {
-	z-index: 60;
-	left: 53%;
-	top: 50%;
+  z-index: 60;
+  left: 53%;
+  top: 50%;
 }
 .sheep {
-	z-index: 65;
-	left: 40%;
-	top: 58%;
+  z-index: 65;
+  left: 40%;
+  top: 58%;
 }
 
 .right-buttons {
@@ -251,7 +252,7 @@ button {
 }
 @keyframes typewriter{
   from{width: 0;}
-  to{width: 10.5em;}
+  to{width: 12em;}
 }
 @keyframes blinkTextCursor{
   from{border-right-color: rgba(0,0,0,.75);}
