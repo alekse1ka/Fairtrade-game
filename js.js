@@ -26,50 +26,31 @@ $("#watop1").click(function() {
 	$("#watop1").prop('disabled', true).addClass("checked");
 	watermodal.style.display = "none";
 	$(".blacksheep").animate({left: '250px'}, 5000, function() {
-		console.log("Done");
-	if ($('#watop1, #watop2, #watop3').prop("disabled")){
-		watermodal.style.display = "none"; 
-	} else {
-		watermodal.style.display = "block"; 
-		}
+		checkWaterButton();
 	});
 });
 
 $("#watop2").click(function() {
-	$(this).prop('disabled', true).addClass("checked");
+	$("#watop2").prop('disabled', true).addClass("checked");
 	watermodal.style.display = "none";
 	$(".blacksheep").animate({top: '250px'}, 5000, function() {
-		console.log("Done");
-	if ($("#watop1, #watop2, #watop3").prop("disabled")){
-		watermodal.style.display = "none"; 
-	} else {
-		watermodal.style.display = "block"; 
-		}
+		checkWaterButton();
 	});
 });
 
 $("#watop3").click(function() {
-	$(this).prop('disabled', true).addClass("checked");
+	$("#watop3").prop('disabled', true).addClass("checked");
 	watermodal.style.display = "none";
 	$(".blacksheep").animate({left: '350px'}, 5000, function() {
-		console.log("Done");
-	if ($("#watop1, #watop2, #watop3").prop("disabled")){
-		watermodal.style.display = "none"; 
-	} else {
-		watermodal.style.display = "block"; 
-		}
+		checkWaterButton();
 	});
 });
 
-
-// 	if ($(".blacksheep") == {left: '250px'}) {
-//     console.log("if");
-// 	} else {
-//     console.log("else");
-//     $("#watop1").prop('disabled', true).addClass("checked");
-// }
-
-
+function checkWaterButton() {
+	if (!$('#watop1').prop("disabled")){ watermodal.style.display = "block"; }
+	if (!$('#watop2').prop("disabled")){ watermodal.style.display = "block"; }
+	if (!$('#watop3').prop("disabled")){ watermodal.style.display = "block"; }
+}
 
 //END OF WATER FUNCTIONS
 
@@ -86,30 +67,34 @@ pestispan.onclick = function() {pestimodal.style.display = "none";}
 
 //PESTICIDES FUNCTIONS
 $("#pestiop1").click(function() {
+	$("#pestiop1").prop('disabled', true).addClass("checked");
 	pestimodal.style.display = "none";
 	$(".farmer").animate({left: '250px'}, 5000, function() {
-		console.log("Done");
-		pestimodal.style.display = "block";
+		checkPestiButton();
 	});
-	$(this).prop('disabled', true).addClass("checked");
-});
-$("#pestiop2").click(function() {
-	pestimodal.style.display = "none";
-	$(".farmer").animate({top: '250px'}, 5000, function() {
-		console.log("Done");
-		pestimodal.style.display = "block";
-	});
-	$(this).prop('disabled', true).addClass("checked");
 });
 
-	$("#pestiop3").click(function() {
+$("#pestiop2").click(function() {
+	$("#pestiop2").prop('disabled', true).addClass("checked");
+	pestimodal.style.display = "none";
+	$(".farmer").animate({top: '250px'}, 5000, function() {
+		checkPestiButton();
+	});
+});
+
+$("#pestiop3").click(function() {
+	$("#pestiop3").prop('disabled', true).addClass("checked");
 	pestimodal.style.display = "none";
 	$(".farmer").animate({left: '350px'}, 5000, function() {
-		console.log("Done");
-		// watermodal.style.display = "block";
+		checkPestiButton();
 	});
-	$(this).prop('disabled', true).addClass("checked");
 });
+
+function checkPestiButton() {
+	if (!$('#pestiop1').prop("disabled")){ pestimodal.style.display = "block"; }
+	if (!$('#pestiop2').prop("disabled")){ pestimodal.style.display = "block"; }
+	if (!$('#pestiop3').prop("disabled")){ pestimodal.style.display = "block"; }
+}
 
 //END OF PESTICIDES FUNCTIONS
 
@@ -126,31 +111,33 @@ feltispan.onclick = function() {feltimodal.style.display = "none";}
 
 //FELTIRIZE FUNCTIONS
 $("#feltiop1").click(function() {
+	$(this).prop('disabled', true).addClass("checked");
 	feltimodal.style.display = "none";
 	$(".dog").animate({left: '250px'}, 5000, function() {
-		console.log("Done");
-		feltimodal.style.display = "block";
+		checkFeltiButton();
 	});
-	$(this).prop('disabled', true).addClass("checked");
 });
 $("#feltiop2").click(function() {
+	$(this).prop('disabled', true).addClass("checked");
 	feltimodal.style.display = "none";
 	$(".milk").animate({top: '250px'}, 5000, function() {
-		console.log("Done");
-		feltimodal.style.display = "block";
+		checkFeltiButton();
 	});
-	$(this).prop('disabled', true).addClass("checked");
 });
 
-	$("#feltiop3").click(function() {
+$("#feltiop3").click(function() {
+	$(this).prop('disabled', true).addClass("checked");
 	feltimodal.style.display = "none";
 	$(".hay").animate({left: '350px'}, 5000, function() {
-		console.log("Done");
-		// watermodal.style.display = "block";
+		checkFeltiButton();
 	});
-	$(this).prop('disabled', true).addClass("checked");
 });
 
+function checkFeltiButton() {
+	if (!$('#feltiop1').prop("disabled")){ feltimodal.style.display = "block"; }
+	if (!$('#feltiop2').prop("disabled")){ feltimodal.style.display = "block"; }
+	if (!$('#feltiop3').prop("disabled")){ feltimodal.style.display = "block"; }
+}
 //END OF PESTICIDES FUNCTIONS
 
 // SOUND PART
