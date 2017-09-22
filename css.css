@@ -1,0 +1,259 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #111;
+  background: radial-gradient(#222, #000);
+  overflow: hidden;
+}
+/*
+canvas {
+  background: #000;
+  bottom: 0;
+  box-shadow:
+    0 0 0 10px #222,
+    0 30px 30px -20px #000
+  ;
+  height: 400px;
+  left: 0;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 600px;
+}*/
+
+.scene {
+  background: url(img/Farm.png) #1E90FF;
+  background-size: contain;
+  background-repeat:no-repeat;
+  background-position: center center;
+  bottom: 0;
+  box-shadow:
+    0 0 0 10px #222,
+    0 30px 30px -20px #000;
+  height: 80vmin;
+  left: 0;
+  max-height: 500px;
+  max-width: 714px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80vmin;
+  color: red;
+}
+
+.scene img {
+transform: scale(0.4, 0.4);
+position: absolute;
+}
+.blink {animation: blink 1s step-start 0s infinite;}
+@keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+
+.blacksheep {
+	z-index: 55;
+	left: 20%;
+	top: 40%;
+}
+.dog {
+	z-index: 45;
+	left: 45%;
+	top: 50%;
+}
+.farmer {
+	z-index: 50;
+	left: 45%;
+	top: 35%;
+}
+.hay {
+	z-index: 40;
+	left: 20%;
+	top: 23%;
+}
+.milk {
+	z-index: 60;
+	left: 53%;
+	top: 50%;
+}
+.sheep {
+	z-index: 65;
+	left: 40%;
+	top: 58%;
+}
+
+.right-buttons {
+   float: right;
+   padding: 5% 5% 0 0;
+   width: 15%;
+}
+
+/*.right-buttons p,
+.left-buttons p {
+  color: orange;
+  font-weight: bold;
+}*/
+
+/*.left-buttons {
+   float: left;
+   padding: 10% 0 0 5%;
+   width: 15%;
+}*/
+button:disabled {
+    cursor: not-allowed;
+}
+
+
+
+button {
+  width: 150px;
+  text-align: center;
+  /*display:block;*/
+  margin: 10px 25px 10px 25px;
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .notchecked {
+    background-color: #f44336;
+    opacity: 0.6
+  }
+
+  .checked {
+    /*border: 3px solid white;*/
+    background-color: #f44336;
+    opacity: 0.6;
+  }
+
+
+/*  .category {
+    border: 1px solid green;
+  }*/
+
+  /* MODAL WINDOW*/
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  margin: 5% auto; /* 15% from the top and centered */
+  position: relative;
+    background-color: #ededed;
+    border: 2px solid #666;
+  color: black;
+  display: block;
+  padding: 5px 20px;
+  border-radius: 30px;
+  width: 50%;
+  text-align: center;
+  }
+
+.modal-content-arrow-border {
+    border-color: #666 transparent transparent transparent;
+    border-style: solid;
+    border-width: 20px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: -42px;
+    right: 30px;
+}
+.modal-content-arrow {
+    border-color: #ededed transparent transparent transparent;
+    border-style: solid;
+    border-width: 20px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: -39px;
+    right: 30px;
+}
+
+/* The Close Button */
+.waterclose,
+.felticlose,
+.pesticlose {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.waterclose:hover,
+.waterclose:focus,
+.felticlose:hover,
+.felticlose:focus,
+.pesticlose:hover,
+.pesticlose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dialogfarmer {
+      position: fixed;
+    bottom: -40%;
+    right: 0;
+    }
+
+.options {
+  padding-top: 10%;
+  text-align: center;
+}
+
+.line-1{
+    position: relative;
+    /*top: 50%;  */
+    /*width: 24em;*/
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    /*font-size: 180%;*/
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    /*transform: translateY(-50%);    */
+}
+
+.anim-typewriter{
+  animation: typewriter 1s steps(44) 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 10.5em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(0,0,0,.75);}
+  to{border-right-color: transparent;}
+}
