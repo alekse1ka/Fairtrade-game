@@ -24,25 +24,31 @@ waterspan.onclick = function() {watermodal.style.display = "none";}
 //WATER FUNCTIONS
 $("#watop1").click(function() {
 	$("#watop1").prop('disabled', true).addClass("checked");
+	hideButtons();
 	watermodal.style.display = "none";
 	$(".blacksheep").animate({left: '250px'}, 5000, function() {
 		checkWaterButton();
+		showButtons();
 	});
 });
 
 $("#watop2").click(function() {
 	$("#watop2").prop('disabled', true).addClass("checked");
+	hideButtons();
 	watermodal.style.display = "none";
 	$(".blacksheep").animate({top: '250px'}, 5000, function() {
 		checkWaterButton();
+		showButtons();
 	});
 });
 
 $("#watop3").click(function() {
 	$("#watop3").prop('disabled', true).addClass("checked");
+	hideButtons();
 	watermodal.style.display = "none";
 	$(".blacksheep").animate({left: '350px'}, 5000, function() {
 		checkWaterButton();
+		showButtons();
 	});
 });
 
@@ -68,25 +74,31 @@ pestispan.onclick = function() {pestimodal.style.display = "none";}
 //PESTICIDES FUNCTIONS
 $("#pestiop1").click(function() {
 	$("#pestiop1").prop('disabled', true).addClass("checked");
+	hideButtons();
 	pestimodal.style.display = "none";
 	$(".farmer").animate({left: '250px'}, 5000, function() {
 		checkPestiButton();
+		showButtons();
 	});
 });
 
 $("#pestiop2").click(function() {
 	$("#pestiop2").prop('disabled', true).addClass("checked");
+	hideButtons();
 	pestimodal.style.display = "none";
 	$(".farmer").animate({top: '250px'}, 5000, function() {
 		checkPestiButton();
+		showButtons();
 	});
 });
 
 $("#pestiop3").click(function() {
 	$("#pestiop3").prop('disabled', true).addClass("checked");
+	hideButtons();
 	pestimodal.style.display = "none";
 	$(".farmer").animate({left: '350px'}, 5000, function() {
 		checkPestiButton();
+		showButtons();
 	});
 });
 
@@ -112,24 +124,30 @@ feltispan.onclick = function() {feltimodal.style.display = "none";}
 //FELTIRIZE FUNCTIONS
 $("#feltiop1").click(function() {
 	$(this).prop('disabled', true).addClass("checked");
+	hideButtons();
 	feltimodal.style.display = "none";
 	$(".dog").animate({left: '250px'}, 5000, function() {
 		checkFeltiButton();
+		showButtons();
 	});
 });
 $("#feltiop2").click(function() {
 	$(this).prop('disabled', true).addClass("checked");
+	hideButtons();
 	feltimodal.style.display = "none";
 	$(".milk").animate({top: '250px'}, 5000, function() {
 		checkFeltiButton();
+		showButtons();
 	});
 });
 
 $("#feltiop3").click(function() {
 	$(this).prop('disabled', true).addClass("checked");
+	hideButtons();
 	feltimodal.style.display = "none";
 	$(".hay").animate({left: '350px'}, 5000, function() {
 		checkFeltiButton();
+		showButtons();
 	});
 });
 
@@ -139,6 +157,18 @@ function checkFeltiButton() {
 	if (!$('#feltiop3').prop("disabled")){ feltimodal.style.display = "block"; }
 }
 //END OF PESTICIDES FUNCTIONS
+
+function hideButtons() {
+waterbtn.style.display = "none";
+pestibtn.style.display = "none";
+feltibtn.style.display = "none";
+}
+
+function showButtons() {
+waterbtn.style.display = "inline-block";
+pestibtn.style.display = "inline-block";
+feltibtn.style.display = "inline-block";
+}
 
 // SOUND PART
 

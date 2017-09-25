@@ -66,31 +66,52 @@ position: absolute;
 }
 
 .blacksheep {
+  position: absolute;
   z-index: 55;
   left: 20%;
   top: 40%;
 }
+
+.roof {
+  position: absolute;
+  z-index: 48;
+  left: 11.5%;
+  top: -4.5%;
+}
+
+.mill {
+  position: absolute;
+  z-index: 49;
+  left: 35%;
+  top: -11%;
+}
+
 .dog {
+  position: absolute;
   z-index: 45;
   left: 45%;
   top: 50%;
 }
 .farmer {
+  position: absolute;
   z-index: 50;
   left: 45%;
   top: 35%;
 }
 .hay {
+  position: absolute;
   z-index: 40;
   left: 20%;
   top: 23%;
 }
 .milk {
+  position: absolute;
   z-index: 60;
   left: 53%;
   top: 50%;
 }
 .sheep {
+  position: absolute;
   z-index: 65;
   left: 40%;
   top: 58%;
@@ -121,8 +142,6 @@ button:disabled {
 
 button {
   width: 150px;
-  text-align: center;
-  /*display:block;*/
   margin: 10px 25px 10px 25px;
   background-color: #4CAF50; /* Green */
     border: none;
