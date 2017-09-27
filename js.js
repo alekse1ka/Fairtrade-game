@@ -10,6 +10,16 @@
     $(this).prop('disabled', true).addClass("checked");
 });
 
+// INTRO MODAL
+var intromodal = document.getElementById('introModal');
+function firstmodal() {
+	hideButtons();
+	intromodal.style.display = "block";
+	crazy1.play();
+}
+var introspan = document.getElementsByClassName("introclose")[0];
+introspan.onclick = function() {intromodal.style.display = "none"; showButtons();}
+
 // WATER MODAL
 var watermodal = document.getElementById('waterModal');
 var waterbtn = document.getElementById("water");
@@ -158,16 +168,33 @@ function checkFeltiButton() {
 }
 //END OF PESTICIDES FUNCTIONS
 
+function checkMainButtons() {
+	if ($('#water').hasClass('checked')){ waterbtn.style.display = "none";};
+	if ($('#pesti').hasClass('checked')){ pestibtn.style.display = "none";};
+	if ($('#felti').hasClass('checked')){ feltibtn.style.display = "none";};
+}
+
 function hideButtons() {
 waterbtn.style.display = "none";
 pestibtn.style.display = "none";
 feltibtn.style.display = "none";
+
 }
 
 function showButtons() {
 waterbtn.style.display = "inline-block";
 pestibtn.style.display = "inline-block";
 feltibtn.style.display = "inline-block";
+checkMainButtons();
+checkoptbuttons();
+}
+
+function checkoptbuttons() {
+	if (!$("#watop1, #watop2, #watop3, #pestiop1, #pestiop2, #pestiop3, #feltiop1, #feltiop2, #feltiop3").not(".checked").length) document.getElementsByClassName('clock')[0].style.display = 'block';
+	$('.clock').one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+              function(event) {
+    console.log("animation ends");
+  });
 }
 
 // SOUND PART
@@ -175,3 +202,19 @@ feltibtn.style.display = "inline-block";
 var crazy1 = new Audio('sounds/Crazydavelong1.mp3');
 var crazy2 = new Audio('sounds/Crazydavelong3.mp3');
 var crazy3 = new Audio('sounds/Crazydavescream.mp3');
+
+firstmodal();
+
+
+// notes
+часы перекинуть в эвент и стедалать адд класс
+анимацию часов перекинуть в отдельный класс - цсс
+
+
+$(".button").click(function(){
+  $(this).addClass("animate");
+  $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+              function(event) {
+    // Do something when the transition ends
+  });
+});
