@@ -295,6 +295,7 @@ button {
   left:35%;
   top:35%;
   display: none;
+  background: white;
 }
 
 .minute-hand {
@@ -328,4 +329,37 @@ button {
   100% {
     transform: translateX(-50%) rotate(540deg);
   }
+}
+
+.cropready {
+  background: #333;
+  width: 40%;
+  color: white;
+  height: 10%;
+  text-align: center;
+  line-height: 50px;
+  display: none;
+  margin-left: 30%;
+  margin-top: 50%;
+  z-index: 150;
+  opacity: 1;  
+  position: absolute;
+}
+
+.cropready img {
+  width: 5%;
+  position: relative;
+    transform: scale(1, 1);
+}
+
+#hire {
+  display: none;
+}
+
+.workers {
+  display: none;
+}
+
+.hireintrotext {
+  display: block;
 }

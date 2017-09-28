@@ -11,28 +11,47 @@
 
 	</div> -->
 	<div class="scene">
-		<img class="blacksheep" src="img/black_sheep.png" alt="">
-		<img class="dog" src="img/dog.png" alt="">
-		<img class="farmer" src="img/farmer.png" alt="">
-		<img class="hay" src="img/hay.png" alt="">
-		<img class="milk" src="img/milk.png" alt="">
-		<img class="sheep" src="img/sheep.png" alt="">
-		<img class="roof" src="img/roof.png" alt="">
-		<img class="mill" src="img/mill.png" alt="">
-		<img class="propeller" src="img/propeller.png" alt="">
-			<div class="clock">
-			  <div class="hour-hand"></div>
-			  <div class="minute-hand"></div>
-			</div>
+		<img class="blacksheep" src="img/black_sheep.png" alt="blacksheep">
+		<img class="dog" src="img/dog.png" alt="dog">
+		<img class="farmer" src="img/farmer.png" alt="farmer">
+		<img class="hay" src="img/hay.png" alt="hay">
+		<img class="milk" src="img/milk.png" alt="milk">
+		<img class="sheep" src="img/sheep.png" alt="sheep">
+		<img class="roof" src="img/roof.png" alt="roof">
+		<img class="mill" src="img/mill.png" alt="milk">
+		<img class="propeller" src="img/propeller.png" alt="propeller">
+		<div class="clock">
+		  <div class="hour-hand"></div>
+		  <div class="minute-hand"></div>
+		</div>
+		<div class="cropready"><img src="http://www.clker.com/cliparts/a/L/I/b/q/o/green-check-mark-hi.png" alt="checkmark"> You'r crops are ready</div>
 	</div>
 	<div class="right-buttons">
 			<button id="water">Add water</button>
 			<button id="pesti">Pesticides</button>
 			<button id="felti">Feltirize</button>
+			<button id="hire">Hire some people</button>
 	</div>
 
 <!-- MODALS-->
 
+<!-- HIRE MODAL -->
+<div id="hireModal" class="modal">
+	<div class="modal-content">
+		<span class="hireclose">&times;</span>
+		<p class="line-1 anim-typewriter hireintrotext">Oh, the stock market crash, you need to harvest immediately.</p>
+		<p class="line-1 anim-typewriter workers">It's too expensive <br> You don't have the money</p>
+		<div class="modal-content-arrow-border"></div>
+		<div class="modal-content-arrow"></div>
+	</div>
+	<div class="options">
+	<button id="hireop1">Workers</button>
+	<button id="hireop2">Childs</button>
+	</div>
+	<img src="img/dialogfarmer.png" alt="" class="dialogfarmer">
+</div>
+
+<!-- INTRO MODAL -->
 <div id="introModal" class="modal">
 	<div class="modal-content">
 		<span class="introclose">&times;</span>

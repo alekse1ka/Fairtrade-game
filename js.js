@@ -10,6 +10,27 @@
     $(this).prop('disabled', true).addClass("checked");
 });
 
+// HIRE MODAL
+var hiremodal = document.getElementById('hireModal');
+var hirebtn = document.getElementById("hire");
+hirebtn.onclick = function() {
+	hiremodal.style.display = "block";
+}
+var hirespan = document.getElementsByClassName("hireclose")[0];
+hirespan.onclick = function() {hiremodal.style.display = "none";}
+
+var hireintrotextline = document.getElementsByClassName("hireintrotext")[0];
+var workersline = document.getElementsByClassName("workers")[0];
+$("#hireop1").click(function() {
+	$("#hireop1").prop('disabled', true).addClass("checked");
+	hireintrotextline.style.display = "none";
+	workersline.style.display = "block";
+});
+
+$("#hireop2").click(function() {
+	$("#hireop2").prop('disabled', true).addClass("checked");
+});
+
 // INTRO MODAL
 var intromodal = document.getElementById('introModal');
 function firstmodal() {
@@ -36,7 +57,7 @@ $("#watop1").click(function() {
 	$("#watop1").prop('disabled', true).addClass("checked");
 	hideButtons();
 	watermodal.style.display = "none";
-	$(".blacksheep").animate({left: '250px'}, 5000, function() {
+	$(".blacksheep").animate({left: '250px'}, 1000, function() {
 		checkWaterButton();
 		showButtons();
 	});
@@ -46,7 +67,7 @@ $("#watop2").click(function() {
 	$("#watop2").prop('disabled', true).addClass("checked");
 	hideButtons();
 	watermodal.style.display = "none";
-	$(".blacksheep").animate({top: '250px'}, 5000, function() {
+	$(".blacksheep").animate({top: '250px'}, 1000, function() {
 		checkWaterButton();
 		showButtons();
 	});
@@ -56,7 +77,7 @@ $("#watop3").click(function() {
 	$("#watop3").prop('disabled', true).addClass("checked");
 	hideButtons();
 	watermodal.style.display = "none";
-	$(".blacksheep").animate({left: '350px'}, 5000, function() {
+	$(".blacksheep").animate({left: '350px'}, 1000, function() {
 		checkWaterButton();
 		showButtons();
 	});
@@ -86,7 +107,7 @@ $("#pestiop1").click(function() {
 	$("#pestiop1").prop('disabled', true).addClass("checked");
 	hideButtons();
 	pestimodal.style.display = "none";
-	$(".farmer").animate({left: '250px'}, 5000, function() {
+	$(".farmer").animate({left: '250px'}, 1000, function() {
 		checkPestiButton();
 		showButtons();
 	});
@@ -96,7 +117,7 @@ $("#pestiop2").click(function() {
 	$("#pestiop2").prop('disabled', true).addClass("checked");
 	hideButtons();
 	pestimodal.style.display = "none";
-	$(".farmer").animate({top: '250px'}, 5000, function() {
+	$(".farmer").animate({top: '250px'}, 1000, function() {
 		checkPestiButton();
 		showButtons();
 	});
@@ -106,7 +127,7 @@ $("#pestiop3").click(function() {
 	$("#pestiop3").prop('disabled', true).addClass("checked");
 	hideButtons();
 	pestimodal.style.display = "none";
-	$(".farmer").animate({left: '350px'}, 5000, function() {
+	$(".farmer").animate({left: '350px'}, 1000, function() {
 		checkPestiButton();
 		showButtons();
 	});
@@ -136,7 +157,7 @@ $("#feltiop1").click(function() {
 	$(this).prop('disabled', true).addClass("checked");
 	hideButtons();
 	feltimodal.style.display = "none";
-	$(".dog").animate({left: '250px'}, 5000, function() {
+	$(".dog").animate({left: '250px'}, 1000, function() {
 		checkFeltiButton();
 		showButtons();
 	});
@@ -145,7 +166,7 @@ $("#feltiop2").click(function() {
 	$(this).prop('disabled', true).addClass("checked");
 	hideButtons();
 	feltimodal.style.display = "none";
-	$(".milk").animate({top: '250px'}, 5000, function() {
+	$(".milk").animate({top: '250px'}, 1000, function() {
 		checkFeltiButton();
 		showButtons();
 	});
@@ -155,7 +176,7 @@ $("#feltiop3").click(function() {
 	$(this).prop('disabled', true).addClass("checked");
 	hideButtons();
 	feltimodal.style.display = "none";
-	$(".hay").animate({left: '350px'}, 5000, function() {
+	$(".hay").animate({left: '350px'}, 1000, function() {
 		checkFeltiButton();
 		showButtons();
 	});
@@ -189,12 +210,26 @@ checkMainButtons();
 checkoptbuttons();
 }
 
+var hirebtn = document.getElementById("hire");
+
 function checkoptbuttons() {
-	if (!$("#watop1, #watop2, #watop3, #pestiop1, #pestiop2, #pestiop3, #feltiop1, #feltiop2, #feltiop3").not(".checked").length) document.getElementsByClassName('clock')[0].style.display = 'block';
-	$('.clock').one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-              function(event) {
-    console.log("animation ends");
-  });
+	if (!$("#watop1, #watop2, #watop3, #pestiop1, #pestiop2, #pestiop3, #feltiop1, #feltiop2, #feltiop3").not(".checked").length) 
+		$(function(){
+
+		document.getElementsByClassName('clock')[0].style.display = 'block';
+  setTimeout( function(){ 
+    document.getElementsByClassName('clock')[0].style.display = 'none';
+    document.getElementsByClassName('cropready')[0].style.display = 'block';
+   $(".cropready").animate({
+   							marginLeft: '30%',
+   							marginTop: '0%',
+   							opacity: '0'}, 3000, function() {
+		hirebtn.style.display = "block";
+	});
+
+  }  , 5000 );
+
+});
 }
 
 // SOUND PART
@@ -203,18 +238,8 @@ var crazy1 = new Audio('sounds/Crazydavelong1.mp3');
 var crazy2 = new Audio('sounds/Crazydavelong3.mp3');
 var crazy3 = new Audio('sounds/Crazydavescream.mp3');
 
-firstmodal();
-
-
-// notes
-часы перекинуть в эвент и стедалать адд класс
-анимацию часов перекинуть в отдельный класс - цсс
-
-
-$(".button").click(function(){
-  $(this).addClass("animate");
-  $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-              function(event) {
-    // Do something when the transition ends
-  });
-});
+hideButtons();
+setTimeout( function(){ 
+    firstmodal();
+    showButtons();
+  }  , 1000 );
