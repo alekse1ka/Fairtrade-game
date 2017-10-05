@@ -29,6 +29,9 @@ $("#hireop1").click(function() {
 
 $("#hireop2").click(function() {
 	$("#hireop2").prop('disabled', true).addClass("checked");
+	pesticrop.style.display = "none";
+	felticrop.style.display = "none";
+	cropsready.style.display = "none";
 });
 
 // INTRO MODAL
@@ -57,36 +60,37 @@ $("#watop1").click(function() {
 	$("#watop1").prop('disabled', true).addClass("checked");
 	hideButtons();
 	watermodal.style.display = "none";
-	$(".blacksheep").animate({left: '250px'}, 1000, function() {
 		checkWaterButton();
 		showButtons();
-	});
+	// $(".blacksheep").animate({left: '250px'}, 1000, function() {
+	// });
 });
 
 $("#watop2").click(function() {
 	$("#watop2").prop('disabled', true).addClass("checked");
 	hideButtons();
 	watermodal.style.display = "none";
-	$(".blacksheep").animate({top: '250px'}, 1000, function() {
+		changecrop();
 		checkWaterButton();
 		showButtons();
-	});
+	// $(".blacksheep").animate({top: '250px'}, 1000, function() {
+	// });
 });
 
-$("#watop3").click(function() {
-	$("#watop3").prop('disabled', true).addClass("checked");
-	hideButtons();
-	watermodal.style.display = "none";
-	$(".blacksheep").animate({left: '350px'}, 1000, function() {
-		checkWaterButton();
-		showButtons();
-	});
-});
+// $("#watop3").click(function() {
+// 	$("#watop3").prop('disabled', true).addClass("checked");
+// 	hideButtons();
+// 	watermodal.style.display = "none";
+// 	$(".blacksheep").animate({left: '350px'}, 1000, function() {
+// 		checkWaterButton();
+// 		showButtons();
+// 	});
+// });
 
 function checkWaterButton() {
 	if (!$('#watop1').prop("disabled")){ watermodal.style.display = "block"; }
 	if (!$('#watop2').prop("disabled")){ watermodal.style.display = "block"; }
-	if (!$('#watop3').prop("disabled")){ watermodal.style.display = "block"; }
+	// if (!$('#watop3').prop("disabled")){ watermodal.style.display = "block"; }
 }
 
 //END OF WATER FUNCTIONS
@@ -107,31 +111,36 @@ $("#pestiop1").click(function() {
 	$("#pestiop1").prop('disabled', true).addClass("checked");
 	hideButtons();
 	pestimodal.style.display = "none";
-	$(".farmer").animate({left: '250px'}, 1000, function() {
 		checkPestiButton();
 		showButtons();
-	});
+	// $(".farmer").animate({left: '250px'}, 1000, function() {
+	// });
 });
 
 $("#pestiop2").click(function() {
 	$("#pestiop2").prop('disabled', true).addClass("checked");
 	hideButtons();
 	pestimodal.style.display = "none";
-	$(".farmer").animate({top: '250px'}, 1000, function() {
 		checkPestiButton();
 		showButtons();
-	});
+	// $(".farmer").animate({top: '250px'}, 1000, function() {
+	// });
 });
 
 $("#pestiop3").click(function() {
 	$("#pestiop3").prop('disabled', true).addClass("checked");
 	hideButtons();
 	pestimodal.style.display = "none";
-	$(".farmer").animate({left: '350px'}, 1000, function() {
 		checkPestiButton();
 		showButtons();
-	});
+		pesticrop.style.display = "block";
+		unhated();
+	// $(".farmer").animate({left: '350px'}, 1000, function() {
+	// });
 });
+
+
+var pesticrop = document.getElementsByClassName("croppesti")[0];
 
 function checkPestiButton() {
 	if (!$('#pestiop1').prop("disabled")){ pestimodal.style.display = "block"; }
@@ -157,35 +166,38 @@ $("#feltiop1").click(function() {
 	$(this).prop('disabled', true).addClass("checked");
 	hideButtons();
 	feltimodal.style.display = "none";
-	$(".dog").animate({left: '250px'}, 1000, function() {
 		checkFeltiButton();
 		showButtons();
-	});
+	// $(".dog").animate({left: '250px'}, 1000, function() {
+	// });
 });
 $("#feltiop2").click(function() {
 	$(this).prop('disabled', true).addClass("checked");
 	hideButtons();
 	feltimodal.style.display = "none";
-	$(".milk").animate({top: '250px'}, 1000, function() {
 		checkFeltiButton();
 		showButtons();
-	});
+		felticrop.style.display = "block";
+	// $(".milk").animate({top: '250px'}, 1000, function() {
+	// });
 });
 
-$("#feltiop3").click(function() {
-	$(this).prop('disabled', true).addClass("checked");
-	hideButtons();
-	feltimodal.style.display = "none";
-	$(".hay").animate({left: '350px'}, 1000, function() {
-		checkFeltiButton();
-		showButtons();
-	});
-});
+// $("#feltiop3").click(function() {
+// 	$(this).prop('disabled', true).addClass("checked");
+// 	hideButtons();
+// 	feltimodal.style.display = "none";
+// 	$(".hay").animate({left: '350px'}, 1000, function() {
+// 		checkFeltiButton();
+// 		showButtons();
+// 	});
+// });
+
+var felticrop = document.getElementsByClassName("cropfelti")[0];
 
 function checkFeltiButton() {
 	if (!$('#feltiop1').prop("disabled")){ feltimodal.style.display = "block"; }
 	if (!$('#feltiop2').prop("disabled")){ feltimodal.style.display = "block"; }
-	if (!$('#feltiop3').prop("disabled")){ feltimodal.style.display = "block"; }
+	// if (!$('#feltiop3').prop("disabled")){ feltimodal.style.display = "block"; }
 }
 //END OF PESTICIDES FUNCTIONS
 
@@ -193,6 +205,14 @@ function checkMainButtons() {
 	if ($('#water').hasClass('checked')){ waterbtn.style.display = "none";};
 	if ($('#pesti').hasClass('checked')){ pestibtn.style.display = "none";};
 	if ($('#felti').hasClass('checked')){ feltibtn.style.display = "none";};
+}
+
+function changecrop() {
+$(".crop").attr('src', 'img/cropwatered.png');
+}
+
+function unhated() {
+$(".dialogfarmer").attr('src', 'img/farmer_unhated.png');
 }
 
 function hideButtons() {
@@ -211,9 +231,10 @@ checkoptbuttons();
 }
 
 var hirebtn = document.getElementById("hire");
+var cropsready = document.getElementsByClassName("cropsready")[0];
 
 function checkoptbuttons() {
-	if (!$("#watop1, #watop2, #watop3, #pestiop1, #pestiop2, #pestiop3, #feltiop1, #feltiop2, #feltiop3").not(".checked").length) 
+	if (!$("#watop1, #watop2, #pestiop1, #pestiop2, #pestiop3, #feltiop1, #feltiop2").not(".checked").length) 
 		$(function(){
 
 		document.getElementsByClassName('clock')[0].style.display = 'block';
@@ -225,12 +246,16 @@ function checkoptbuttons() {
    							marginTop: '0%',
    							opacity: '0'}, 3000, function() {
 		hirebtn.style.display = "block";
+		cropsready.style.display = "block";
 	});
 
   }  , 5000 );
 
 });
 }
+
+
+
 
 // SOUND PART
 

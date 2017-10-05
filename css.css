@@ -4,13 +4,19 @@ body {
 }
 
 body {
-  background: #111;
-  background: radial-gradient(#222, #000);
+  /*background: #111;*/
+  /*background: radial-gradient(#222, #000);*/
   overflow: hidden;
 }
 /* Intro CSS */
 .introbg {
   background-image: url(img/Intro.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.gamebg {
+  background-image: url(img/gamebg.jpg);
   background-position: center center;
   background-size: cover;
 }
@@ -29,29 +35,33 @@ body {
 
 /* Main game CSS */
 .scene {
-  background: url(img/Farm.png) #1E90FF;
+  width: 90vw;
+  height: 48vw;
+  background: #79C501;
+  bottom: 0;
+  background: url(img/background.jpg);
+  /*border: 1px solid white*/
   background-size: contain;
   background-repeat:no-repeat;
   background-position: center center;
-  bottom: 0;
-  box-shadow:
+/*  box-shadow:
     0 0 0 10px #222,
     0 30px 30px -20px #000;
   height: 80vmin;
   left: 0;
   max-height: 500px;
-  max-width: 714px;
+  max-width: 714px;*/
   margin: auto;
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 80vmin;
+  left: 5vw;
+  top: 0vw;
+  /*width: 80vmin;*/
   color: red;
 }
 
 .scene img {
-transform: scale(0.4, 0.4);
-position: absolute;
+/*transform: scale(0.4, 0.4);*/
+/*position: absolute;*/
 }
 .blink {animation: blink 1s step-start 0s infinite;}
 @keyframes blink {
@@ -71,12 +81,44 @@ position: absolute;
   top: -2%;
 }
 
-.blacksheep {
+.crop {
   position: absolute;
   z-index: 55;
-  left: 20%;
-  top: 40%;
+  left: 30vw;
+  top: 10vw;
 }
+
+.cropcover {
+  position: absolute;
+  z-index: 60;
+    left: 29vw;
+    top: 7vw;
+}
+
+.croppesti {
+  display: none;
+  position: absolute;
+  z-index: 56;
+    left: 30vw;
+    top: 10vw;
+}
+
+.cropfelti {
+  display: none;
+  position: absolute;
+  z-index: 57;
+    left: 32vw;
+    top: 11vw;
+}
+
+.cropsready {
+  display: none;
+  position: absolute;
+  z-index: 58;
+    left: 30.5vw;
+    top: 10vw;
+}
+
 
 .roof {
   position: absolute;
@@ -92,11 +134,11 @@ position: absolute;
   top: -11%;
 }
 
-.dog {
+#pesti {
   position: absolute;
   z-index: 45;
-  left: 45%;
-  top: 50%;
+  left: 5vw;
+  top: 7vw;
 }
 .farmer {
   position: absolute;
@@ -104,17 +146,39 @@ position: absolute;
   left: 45%;
   top: 35%;
 }
-.hay {
+#felti {
   position: absolute;
   z-index: 40;
-  left: 20%;
-  top: 23%;
+  left: 5vw;
+  top: 13vw;
 }
-.milk {
+
+
+
+.newquest1 {
+  z-index: 65;
+  margin-left: 11vw;
+  margin-top: 0vw;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: yellow;
+  color: black;
+  line-height: 40px;
+  text-align: center; 
+}
+
+
+#water {
   position: absolute;
   z-index: 60;
-  left: 53%;
-  top: 50%;
+  left: 5vw;
+  top: 1vw;
+}
+
+#water:hover, #felti:hover, #pesti:hover, #hire:hover {
+  transform: scale(1.2);
+  transition: transform 0.1s;
 }
 .sheep {
   position: absolute;
@@ -354,6 +418,10 @@ button {
 
 #hire {
   display: none;
+  position: absolute;
+  z-index: 40;
+  left: 5vw;
+  top: 1vw;
 }
 
 .workers {
