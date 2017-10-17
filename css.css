@@ -21,12 +21,22 @@ body {
   background-size: cover;
 }
 
-.start {
-  background: #2199ff;
+button {
+  background-color: #2199ff;
   color: white;
   border: white 2px solid;
   border-radius: 20px;
-}
+  /*width: 150px;*/
+  margin: 10px 25px 10px 25px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:focus {outline:0;}
 
 .startwrap {
   text-align: center;
@@ -40,7 +50,7 @@ body {
   background: #79C501;
   bottom: 0;
   background: url(img/background.jpg);
-  /*border: 1px solid white*/
+  /*border: 1px solid white;*/
   background-size: contain;
   background-repeat:no-repeat;
   background-position: center center;
@@ -86,6 +96,14 @@ body {
   z-index: 55;
   left: 30vw;
   top: 10vw;
+  width: 52vw;
+}
+
+.barn {
+  position: absolute;
+  z-index: 15;
+  left: -3vw;
+      width: 90.2vw;
 }
 
 .cropcover {
@@ -93,6 +111,7 @@ body {
   z-index: 60;
     left: 29vw;
     top: 7vw;
+    width: 31vw;
 }
 
 .croppesti {
@@ -139,6 +158,7 @@ body {
   z-index: 45;
   left: 5vw;
   top: 7vw;
+  width: 5.5vw;
 }
 .farmer {
   position: absolute;
@@ -151,6 +171,7 @@ body {
   z-index: 40;
   left: 5vw;
   top: 13vw;
+  width: 5.5vw;
 }
 
 
@@ -174,12 +195,83 @@ body {
   z-index: 60;
   left: 5vw;
   top: 1vw;
+  width: 5vw;
+}
+
+.newquest {
+  width: 2vw;
+  height: 2vw;
+  background: linear-gradient(180deg, #9A0000 50%, #D61C1D);
+  border-radius: 100%;
+  margin : 10% auto;
+  position: relative;
+  z-index: 62;
+  color: yellow;
+  line-height: 2vw;
+  text-align: center;
+  border: 0.3vw solid white;
+  font-weight: bold;
+  font-size: 2vw;
+     -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+  user-select: none;
+    animation: newquestmove 1s infinite; 
+  animation-timing-function: ease-in-out;
+      left: -33vw;
+}
+
+@keyframes newquestmove {
+  0% {
+    left: -33vw;
+  }
+  50% {
+    left: -32.5vw;
+  }
+  100% {
+    left: -33vw;
+  }
+}
+.questwater {
+  top: -7vw;
+    opacity: 1;
+}
+
+
+.questfelti {
+    top: -18vw;
+      opacity: 1;
+}
+
+.questpesti {
+    top: -12vw;
+      opacity: 1;
+}
+
+.questhire {
+    top: -7vw;
+      display: none;
+}
+
+.newquest:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 0.5vw solid transparent;
+  border-right: 0.5vw solid transparent;
+  border-top: 1vw solid white;
+  left: -1.1vw;
+  bottom: 0.5vw;
+  transform: rotate(90deg);
+  z-index: 61;
 }
 
 #water:hover, #felti:hover, #pesti:hover, #hire:hover {
   transform: scale(1.2);
   transition: transform 0.1s;
+  cursor: pointer;
 }
+
 .sheep {
   position: absolute;
   z-index: 65;
@@ -210,21 +302,7 @@ button:disabled {
 
 
 
-button {
-  width: 150px;
-  margin: 10px 25px 10px 25px;
-  background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-  .notchecked {
+   .notchecked {
     background-color: #f44336;
     opacity: 0.6
   }
@@ -315,6 +393,7 @@ button {
       position: fixed;
     bottom: -40%;
     right: 0;
+        width: 35vw;
     }
 
 .options {
@@ -325,7 +404,7 @@ button {
 .line-1{
     position: relative;
     /*top: 50%;  */
-    /*width: 24em;*/
+    width: 24em;
     margin: 0 auto;
     border-right: 2px solid rgba(255,255,255,.75);
     /*font-size: 180%;*/
@@ -341,7 +420,7 @@ button {
 }
 @keyframes typewriter{
   from{width: 0;}
-  to{width: 12em;}
+  to{width: 25em;}
 }
 @keyframes blinkTextCursor{
   from{border-right-color: rgba(0,0,0,.75);}
@@ -422,6 +501,7 @@ button {
   z-index: 40;
   left: 5vw;
   top: 1vw;
+  width: 5.5vw;
 }
 
 .workers {

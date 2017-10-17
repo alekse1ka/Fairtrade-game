@@ -1,5 +1,3 @@
-
-
 	$("#water").click(function(){
     $(this).prop('disabled', true).addClass("checked");
 });
@@ -10,6 +8,13 @@
     $(this).prop('disabled', true).addClass("checked");
 });
 
+
+var questwater = document.getElementsByClassName("questwater")[0];
+var questpesti = document.getElementsByClassName("questpesti")[0];
+var questfelti = document.getElementsByClassName("questfelti")[0];
+var questhire = document.getElementsByClassName("questhire")[0];
+
+
 // HIRE MODAL
 var hiremodal = document.getElementById('hireModal');
 var hirebtn = document.getElementById("hire");
@@ -17,7 +22,7 @@ hirebtn.onclick = function() {
 	hiremodal.style.display = "block";
 }
 var hirespan = document.getElementsByClassName("hireclose")[0];
-hirespan.onclick = function() {hiremodal.style.display = "none";}
+// hirespan.onclick = function() {hiremodal.style.display = "none";}
 
 var hireintrotextline = document.getElementsByClassName("hireintrotext")[0];
 var workersline = document.getElementsByClassName("workers")[0];
@@ -35,8 +40,10 @@ $("#hireop2").click(function() {
 });
 
 // INTRO MODAL
+
 var intromodal = document.getElementById('introModal');
 function firstmodal() {
+	banjo.play();
 	hideButtons();
 	intromodal.style.display = "block";
 	crazy1.play();
@@ -52,7 +59,7 @@ waterbtn.onclick = function() {
 	crazy1.play();
 }
 var waterspan = document.getElementsByClassName("waterclose")[0];
-waterspan.onclick = function() {watermodal.style.display = "none";}
+// waterspan.onclick = function() {watermodal.style.display = "none";}
 // END OF WATER MODAL
 
 //WATER FUNCTIONS
@@ -103,7 +110,7 @@ pestibtn.onclick = function() {
 	crazy2.play();
 }
 var pestispan = document.getElementsByClassName("pesticlose")[0];
-pestispan.onclick = function() {pestimodal.style.display = "none";}
+// pestispan.onclick = function() {pestimodal.style.display = "none";}
 // END OF PESTICIDES MODAL
 
 //PESTICIDES FUNCTIONS
@@ -158,7 +165,7 @@ feltibtn.onclick = function() {
 	crazy3.play();
 }
 var feltispan = document.getElementsByClassName("felticlose")[0];
-feltispan.onclick = function() {feltimodal.style.display = "none";}
+// feltispan.onclick = function() {feltimodal.style.display = "none";}
 // END OF FILTIRIZE MODAL
 
 //FELTIRIZE FUNCTIONS
@@ -202,9 +209,23 @@ function checkFeltiButton() {
 //END OF PESTICIDES FUNCTIONS
 
 function checkMainButtons() {
-	if ($('#water').hasClass('checked')){ waterbtn.style.display = "none";};
-	if ($('#pesti').hasClass('checked')){ pestibtn.style.display = "none";};
-	if ($('#felti').hasClass('checked')){ feltibtn.style.display = "none";};
+	if ($('#water').hasClass('checked')){ 
+		waterbtn.style.display = "none";
+		pestibtn.style.top = "1vw";
+		feltibtn.style.top = "7vw";
+		questwater.style.display = "none";
+		questpesti.style.top = "-1vw" 
+	};
+	if ($('#pesti').hasClass('checked')){ 
+		pestibtn.style.display = "none";
+		questpesti.style.display = "none";
+		feltibtn.style.top = "1vw";
+		questfelti.style.top = "-7vw";
+	};
+	if ($('#felti').hasClass('checked')){ 
+		feltibtn.style.display = "none";
+		questfelti.style.display = "none";
+	};
 }
 
 function changecrop() {
@@ -219,13 +240,18 @@ function hideButtons() {
 waterbtn.style.display = "none";
 pestibtn.style.display = "none";
 feltibtn.style.display = "none";
-
+questwater.style.display = "none";
+questpesti.style.display = "none";
+questfelti.style.display = "none";
 }
 
 function showButtons() {
 waterbtn.style.display = "inline-block";
 pestibtn.style.display = "inline-block";
 feltibtn.style.display = "inline-block";
+questwater.style.display = "block";
+questpesti.style.display = "block";
+questfelti.style.display = "block";
 checkMainButtons();
 checkoptbuttons();
 }
@@ -247,6 +273,7 @@ function checkoptbuttons() {
    							opacity: '0'}, 3000, function() {
 		hirebtn.style.display = "block";
 		cropsready.style.display = "block";
+		questhire.style.display = "block";
 	});
 
   }  , 5000 );
@@ -254,17 +281,46 @@ function checkoptbuttons() {
 });
 }
 
-
-
-
 // SOUND PART
 
 var crazy1 = new Audio('sounds/Crazydavelong1.mp3');
 var crazy2 = new Audio('sounds/Crazydavelong3.mp3');
 var crazy3 = new Audio('sounds/Crazydavescream.mp3');
+var banjo = new Audio('sounds/banjosong.mp3');
+banjo.volume = 0.3;
 
 hideButtons();
 setTimeout( function(){ 
     firstmodal();
     showButtons();
   }  , 1000 );
+
+// // DIALOG PART
+
+// intro dialog
+$('#introdialog').typeIt({
+     strings: ["You're going to be a farmer for the next few minutes/months.", "Are you ready to get your hands in?"],
+     speed: 50,
+     // autoStart: false
+});
+
+// hire dialog
+$('#hiredialog').typeIt({
+     strings: ["Oh, the stock market crash, you need to harvest immediately."],
+     speed: 50,
+     autoStart: false
+});
+
+// water dialog
+$('#waterdialog').typeIt({
+     strings: ["There is no water", "What do you want to do now?"],
+     speed: 50,
+     autoStart: false
+});
+
+// water dialog
+$('#pestidialog').typeIt({
+     strings: ["Good news, you have enough pestisize.", " Aw, dont forget to protect yourself. Pick your clothes."],
+     speed: 50,
+     autoStart: false
+});
