@@ -7,29 +7,32 @@
 <link rel="stylesheet" href="css.css">
 <body class="gamebg">
 	<div class="scene">
+		<div class="count">
+		<img class="clipboard" src="img/clipboard.png" alt="clipboard">
+		<p class="counter">1400$</p>
+		</div>
 		<img class="crop" src="img/crop.png" alt="crops">
-				<img class="cropcover" src="img/crop_cover.png" alt="crops cover">
-				<img class="barn" src="img/barn.png" alt="barn">
-				<!-- <img class="cropwatered" src="img/cropwatered.png" alt="crops watered"> -->
-				<img class="cropfelti" src="img/cropfelti.png" alt="crops felti">
-				<img class="croppesti" src="img/croppesti.png" alt="crops pesti">
-				<img class="cropsready" src="img/cropready.png" alt="crops ready">
+		<img class="cropcover" src="img/crop_cover.png" alt="crops cover">
+		<img class="roofpart" src="img/roofpart.png" alt="roofpart">
+		<img class="barn" src="img/barn.png" alt="barn">
+		<img class="roof" src="img/roof.png" alt="roof">
+		<img class="woman" src="img/woman1.png" alt="woman">
+		<img class="cows" src="img/cows.png" alt="cows">
+		<img class="cropfelti" src="img/cropfelti.png" alt="crops felti">
+		<img class="croppesti" src="img/croppesti.png" alt="crops pesti">
+		<img class="cropsready" src="img/cropready.png" alt="crops ready">
 		<div class="quests">
 			<img id="water" src="img/water.png" alt="water"><div class="newquest questwater">!</div>
 			<img id="pesti" src="img/pesti.png" alt="pesti"><div class="newquest questpesti">!</div>
 			<img id="felti" src="img/felti.png" alt="felti"><div class="newquest questfelti">!</div>
 			<img id="hire" src="img/hire.png" alt="hire"><div class="newquest questhire">!</div>
-
-			</div>
-		<!-- <img class="sheep" src="img/sheep.png" alt="sheep"> -->
-		<!-- <img class="roof" src="img/roof.png" alt="roof"> -->
-		<!-- <img class="mill" src="img/mill.png" alt="milk"> -->
-		<!-- <img class="propeller" src="img/propeller.png" alt="propeller"> -->
+		</div>
 		<div class="clock">
 		  <div class="hour-hand"></div>
 		  <div class="minute-hand"></div>
 		</div>
 		<div class="cropready"><img src="img/check.png" alt="checkmark"> You'r crops are ready</div>
+		<img class="milkvan" src="img/milkvan.png" alt="milkwan">
 	</div>
 
 
@@ -39,7 +42,7 @@
 <div id="hireModal" class="modal">
 	<div class="modal-content">
 		<!-- <span class="hireclose">&times;</span> -->
-		<p id="hiredialog"></p>
+		<p id="hiredialog">Oh, the stock market crash, you need to harvest immediately.</p>
 		<!-- <p class="line-1 anim-typewriter workers">It's too expensive <br> You don't have the money</p> -->
 		<div class="modal-content-arrow-border"></div>
 		<div class="modal-content-arrow"></div>
@@ -55,7 +58,8 @@
 <div id="introModal" class="modal">
 	<div class="modal-content">
 		<!-- <span class="introclose">&times;</span> -->
-		<p id="introdialog"></p> 
+		<p id="introdialog">You're going to be a farmer for the next few minutes/months. <br>Are you ready to get your hands in?</p> 
+
 		
 		<div class="modal-content-arrow-border"></div>
 		<div class="modal-content-arrow"></div>
@@ -70,7 +74,7 @@
 <div id="waterModal" class="modal">
 	<div class="modal-content">
 		<!-- <span class="waterclose">&times;</span> -->
-		<p id="waterdialog"></p> 
+		<p id="waterdialog">There is no water <br>What do you want to do now?</p> 
 		<div class="modal-content-arrow-border"></div>
 		<div class="modal-content-arrow"></div>
 	</div>
@@ -85,7 +89,7 @@
 <div id="pestiModal" class="modal">
 	<div class="modal-content">
 		<!-- <span class="pesticlose">&times;</span> -->
-		<p id="pestidialog"></p>
+		<p id="pestidialog">Good news, you have enough pestisize. <br>Aw, dont forget to protect yourself. Pick your clothes.</p>
 		<div class="modal-content-arrow-border"></div>
 		<div class="modal-content-arrow"></div>
 	</div>
@@ -100,7 +104,7 @@
 <div id="feltiModal" class="modal">
 	<div class="modal-content">
 		<!-- <span class="felticlose">&times;</span> -->
-		<p class="line-1 anim-typewriter">That will cost X DKK</p>
+		<p id="feltidialog">That will cost 400 DKK</p>
 		<div class="modal-content-arrow-border"></div>
 		<div class="modal-content-arrow"></div>
 	</div>

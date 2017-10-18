@@ -1,3 +1,8 @@
+@font-face {
+    font-family: wolves;
+    src: url(fonts/wolves.ttf);
+}
+
 html,
 body {
   height: 100%;
@@ -67,28 +72,7 @@ button {
   top: 0vw;
   /*width: 80vmin;*/
   color: red;
-}
-
-.scene img {
-/*transform: scale(0.4, 0.4);*/
-/*position: absolute;*/
-}
-.blink {animation: blink 1s step-start 0s infinite;}
-@keyframes blink {
-  50% {
-    opacity: 0.0;
-  }
-}
-@-webkit-keyframes blink {
-  50% {
-    opacity: 0.0;
-  }
-}
-
-.propeller {
-  z-index: 50;
-  left: 31%;
-  top: -2%;
+  clip-path: inset(0 3.1% 0 0);
 }
 
 .crop {
@@ -99,11 +83,51 @@ button {
   width: 52vw;
 }
 
+.cows {
+  position: absolute;
+  z-index: 22;
+  left: 40vw;
+  top: 28vw;
+  width: 11vw;
+}
+
 .barn {
   position: absolute;
   z-index: 15;
   left: -3vw;
       width: 90.2vw;
+}
+
+.roof {
+  position: absolute;
+  z-index: 16;
+  left: -3vw;
+      width: 90.2vw;
+      top: 0vw;
+}
+
+.roofpart {
+  position: absolute;
+  z-index: 14;
+  left: -3vw;
+      width: 90.2vw;
+      top: 0vw;
+}
+
+.woman {
+  z-index:14;
+  position: absolute;
+      width: 5vw;
+    top: 15vw;
+    left: 73vw;
+}
+
+.woman.flip {
+   transform: scaleX(-1);
+}
+
+.woman.unflip {
+   transform: scaleX(-1);
 }
 
 .cropcover {
@@ -120,6 +144,7 @@ button {
   z-index: 56;
     left: 30vw;
     top: 10vw;
+    width: 52vw;
 }
 
 .cropfelti {
@@ -128,6 +153,7 @@ button {
   z-index: 57;
     left: 32vw;
     top: 11vw;
+    width: 50vw;
 }
 
 .cropsready {
@@ -136,14 +162,7 @@ button {
   z-index: 58;
     left: 30.5vw;
     top: 10vw;
-}
-
-
-.roof {
-  position: absolute;
-  z-index: 48;
-  left: 11.5%;
-  top: -4.5%;
+        width: 51.5vw;
 }
 
 .mill {
@@ -267,16 +286,52 @@ button {
 }
 
 #water:hover, #felti:hover, #pesti:hover, #hire:hover {
-  transform: scale(1.2);
-  transition: transform 0.1s;
+  width: 6vw;
+  transition: width 0.1s ease-in-out;
   cursor: pointer;
 }
 
-.sheep {
+.milkvan {
   position: absolute;
-  z-index: 65;
-  left: 40%;
-  top: 58%;
+  z-index: 19;
+    top: -12vw;
+    left: 20vw;
+  width: 9vw;
+  animation: riding 20s linear infinite, shake 1s linear infinite;
+}
+
+@keyframes riding {
+  0% {
+    top: -12vw;
+    left: 20vw
+  }
+
+  30% {
+top: 28vw;
+    left: 88vw;
+  }
+
+  100% {
+top: 28vw;
+    left: 88vw;
+  }
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(0, -1px, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(0, 2px, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(0, -4px, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d0, (4px, 0);
+  }
 }
 
 .right-buttons {
@@ -309,7 +364,7 @@ button:disabled {
 
   .checked {
     /*border: 3px solid white;*/
-    background-color: #f44336;
+    /*background-color: #f44336;*/
     opacity: 0.6;
   }
 
@@ -510,4 +565,25 @@ button:disabled {
 
 .hireintrotext {
   display: block;
+}
+
+.clipboard {
+  position: absolute;
+  z-index:200;
+  width: 46vw;
+  left: 25vw;
+  top: -3vw;
+   display: none;
+}
+
+.counter {
+  font-family: wolves;
+  color: black;
+  z-index: 201;
+  position: absolute;
+  left: 50vw;
+  top: 37vw;
+  font-size: 4vw;
+  transform: rotate(15deg);
+  display: none;
 }
